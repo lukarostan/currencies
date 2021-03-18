@@ -72,6 +72,9 @@ export default {
   components: {
     
   },
+  created(){
+    this.$store.dispatch('getRates')
+  },
 
   data () {
     return {

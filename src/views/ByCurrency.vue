@@ -1,6 +1,11 @@
 <template>
-  <div class="home">
-    <h3>Currency</h3>
+  <div class="container">
+    <h4>Select Currency</h4>
+    <q-select 
+    outlined 
+    :options="currencies" 
+    v-model="selectedCurrency">
+    </q-select>
   </div>
 </template>
 
@@ -11,6 +16,12 @@ export default {
   name: 'ByCurrency',
   components: {
     
+  },
+  data(){
+    return{
+      currencies: ["EUR", "USD", "GBP", "AUD"],
+      selectedCurrency: ''
+    }
   }
 }
 </script>
