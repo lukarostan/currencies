@@ -6,20 +6,25 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    rates: []
+    rates: [],
+    selectedCountry: '',
+    selectedCurrency: '',
+    ratesDate: '2015-02-02'
+
+  },
+  getters: {
+
   },
   mutations: {
+    updateCountry (state, country){
+      state.selectedCountry = country;
+    }
   },
   actions: {
-    getRates() {
+    getRates(ratesDate) {
       axios
-      .get("https://api.hnb.hr/tecajn/v1")
+      .get(`https://api.hnb.hr/tecajn/v1?datum=${ratesDate}`)
       .then(response => (this.state.rates = response) )
-      /* .then((response) => response.json())
-      .then((data) => commit("saveRates", data))
-      .catch((error) => {
-        console.log(error);
-      }); */
     },
   },
   modules: {

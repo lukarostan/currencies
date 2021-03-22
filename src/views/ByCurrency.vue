@@ -1,10 +1,11 @@
 <template>
   <div class="container">
-    <h4>Select Currency</h4>
     <q-select 
     outlined 
     :options="currencies" 
-    v-model="selectedCurrency">
+    v-model="selectedCurrency"
+    label="Select Currency"
+    class="my-15">
     </q-select>
   </div>
 </template>
